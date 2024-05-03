@@ -89,7 +89,7 @@
       userAgent: "Mozilla/5.0 ..."
     };
 
-    const UserDetails = ({ user }) => {
+    const DetailsShow = ({ user }) => {
       const genderColor = user.gender === 'male' ? 'blue' : 'pink';
       return (
         <div>
@@ -110,7 +110,7 @@
     };
 
     ReactDOM.render(
-      <UserDetails user={user} />,
+      <DetailsShow user={user} />,
       document.getElementById('root')
     );
   </script>
