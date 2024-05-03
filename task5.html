@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Details</title>
+  <style>
+    .property {
+      margin-bottom: 10px;
+      box-shadow: 2px 1px 1px 1px lightcoral;
+    }
+    .blue-text {
+      color: blue;
+    }
+    .pink-text {
+      color: pink;
+    }
+    .user-image {
+      max-width: 200px;
+      max-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    let user = {
+      id: 1,
+      firstName: "Terry",
+      lastName: "Medhurst",
+      maidenName: "Smitham",
+      age: 50,
+      gender: "male",
+      email: "atuny0@sohu.com",
+      phone: "+63 791 675 8914",
+      username: "atuny0",
+      password: "9uQFF1Lh",
+      birthDate: "2000-12-25",
+      image: "https://robohash.org/Terry.png?set=set4",
+      bloodGroup: "A-",
+      height: 189,
+      weight: 75.4,
+      eyeColor: "Green",
+      hair: {
+        color: "Black",
+        type: "Strands",
+      },
+      domain: "slashdot.org",
+      ip: "117.29.86.254",
+      address: {
+        address: "1745 T Street Southeast",
+        city: "Washington",
+        coordinates: {
+          lat: 38.867033,
+          lng: -76.979235,
+        },
+        postalCode: "20020",
+        state: "DC",
+      },
+      macAddress: "13:69:BA:56:A3:74",
+      university: "Capitol University",
+      bank: {
+        cardExpire: "06/22",
+        cardNumber: "50380955204220685",
+        cardType: "maestro",
+        currency: "Peso",
+        iban: "NO17 0695 2754 967",
+      },
+      company: {
+        address: {
+          address: "629 Debbie Drive",
+          city: "Nashville",
+          coordinates: {
+            lat: 36.208114,
+            lng: -86.58621199999999,
+          },
+          postalCode: "37076",
+          state: "TN",
+        },
+        department: "Marketing",
+        name: "Blanda-O'Keefe",
+        title: "Help Desk Operator",
+      },
+      ein: "20-9487066",
+      ssn: "661-64-2976",
+      userAgent: "Mozilla/5.0 ..."
+    };
+
+    const UserDetails = ({ user }) => {
+      const genderColor = user.gender === 'male' ? 'blue' : 'pink';
+      return (
+        <div>
+          <div className="property"><span>ID:</span> {user.id}</div>
+          <div className="property"><span>First Name:</span> {user.firstName}</div>
+          <div className="property"><span>Last Name:</span> {user.lastName}</div>
+          <div className="property"><span>Maiden Name:</span> {user.maidenName}</div>
+          <div className="property"><span>Age:</span> {user.age}</div>
+          <div className="property"><span>Gender:</span> <span className={genderColor}>{user.gender}</span></div>
+          <div className="property"><span>Email:</span> {user.email}</div>
+          <div className="property"><span>Phone:</span> {user.phone}</div>
+          <div className="property"><span>Username:</span> {user.username}</div>
+          <div className="property"><span>Password:</span> {user.password}</div>
+          <div className="property"><span>Image:</span> <img src={user.image} alt="User" className="user-image" /></div>
+          
+        </div>
+      );
+    };
+
+    ReactDOM.render(
+      <UserDetails user={user} />,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+</html>
